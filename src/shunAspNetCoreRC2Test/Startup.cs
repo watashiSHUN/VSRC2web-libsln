@@ -22,7 +22,7 @@ namespace shunAspNetCoreRC2Test
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             loggerFactory.AddConsole();
-
+            
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -30,7 +30,7 @@ namespace shunAspNetCoreRC2Test
 
             app.Run(async (context) =>
             {
-                await context.Response.WriteAsync("Hello World!");
+                await context.Response.WriteAsync("Hello World! " + ClassLibrary1.Class1.shun());
             });
         }
     }
